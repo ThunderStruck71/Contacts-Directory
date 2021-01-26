@@ -84,6 +84,7 @@ export default {
         const contactName = contact.name.length > 25
           ? contact.name.substr(25) + '...'
           : contact.name
+
         return {
           id: contact.id,
           name: contactName
