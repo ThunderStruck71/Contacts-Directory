@@ -81,9 +81,12 @@ export default {
   computed: {
     flatted () {
       return this.flat(this.contacts).map(contact => {
+        const contactName = contact.name.length > 25
+          ? contact.name.substr(25) + '...'
+          : contact.name
         return {
           id: contact.id,
-          name: contact.name
+          name: contactName
         }
       })
     }
