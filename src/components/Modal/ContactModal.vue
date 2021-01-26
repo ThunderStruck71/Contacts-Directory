@@ -80,7 +80,12 @@ export default {
   },
   computed: {
     flatted () {
-      return this.flat(this.contacts)
+      return this.flat(this.contacts).map(contact => {
+        return {
+          id: contact.id,
+          name: contact.name
+        }
+      })
     }
   },
   methods: {
